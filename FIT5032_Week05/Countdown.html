@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<div id="countdown"></div>
+<script>
+var timeleft = 10;
+var downloadTimer = setInterval(function(){
+  if(timeleft <= 0){
+    clearInterval(downloadTimer);
+    document.getElementById("countdown").innerHTML = "Congrats!";
+  } else {
+    document.getElementById("countdown").innerHTML = timeleft + " seconds remaining";
+  }
+  timeleft --;
+},1000)
+</script>
+</html>
