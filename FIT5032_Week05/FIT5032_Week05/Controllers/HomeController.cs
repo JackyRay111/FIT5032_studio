@@ -26,5 +26,11 @@ namespace FIT5032_Week05.Controllers
 
             return View();
         }
+
+        public ActionResult DatePicker()
+        {
+            ViewBag.Message = "Date Picker";
+            return View();
+        }
     }
 }
