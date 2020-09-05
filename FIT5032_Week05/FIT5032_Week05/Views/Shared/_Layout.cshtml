@@ -42,11 +42,12 @@
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
     <script src="~/Scripts/notify.min.js" defer></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $(".navbar-nav li").notify("Testing on notify JS", "success");
-        });
+    <script type="text/javascript" defer>
+      /*  $(document).ready(function () {
+            $.notify("Testing on notify JS", "index");
+        });*/
     </script>
+    <script src="~/Scripts/indexNotify.js"></script>
 
 
 </body>
