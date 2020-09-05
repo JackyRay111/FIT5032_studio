@@ -19,15 +19,17 @@
     <script type="text/javascript">
         $(function () {
             $('#datepicker').datepicker({
+                defaultViewDate:
+                    { day: 20, month: 7, year: 2020},
                 format: "dd/mm/yyyy"
             })
-            $('#datepicker').datepicker('update', "20/08/2020");
-            $('#datepicker').datepicker('show');
+           $('#datepicker').datepicker('update', "20/08/2020");
+           //$('#datepicker').datepicker('show');
         })
     </script>
 </head>
 <body>
-    @Html.Editor("datepicker")
+    <input data-provide="datepicker" id="datepicker">
 </body>
 
 
