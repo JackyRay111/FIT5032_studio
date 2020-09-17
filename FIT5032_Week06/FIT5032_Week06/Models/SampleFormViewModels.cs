@@ -17,6 +17,7 @@ namespace FIT5032_Week06.Models
         [Display(Name = "First Name")]
         public string FirstName { get; set; }
         [StringLength(3)]
+
         public string LastName { get; set; }
     }
 }
