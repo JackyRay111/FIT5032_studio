@@ -88,6 +88,7 @@ namespace FIT5032_Week07_ASP.NET_Identity.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+      
         public ActionResult Edit([Bind(Include = "Id,Firstname,Lastname,UserId")] Students students)
         {
             if (ModelState.IsValid)

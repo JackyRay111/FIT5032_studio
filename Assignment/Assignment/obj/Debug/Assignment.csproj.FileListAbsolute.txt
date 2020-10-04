@@ -101,8 +101,9 @@ D:\FIT5032---S3\5032_JiancongLei_30310016\FIT5032_studio\Assignment\Assignment\b
 D:\FIT5032---S3\5032_JiancongLei_30310016\FIT5032_studio\Assignment\Assignment\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 D:\FIT5032---S3\5032_JiancongLei_30310016\FIT5032_studio\Assignment\Assignment\bin\Microsoft.Owin.Security.OAuth.xml
 D:\FIT5032---S3\5032_JiancongLei_30310016\FIT5032_studio\Assignment\Assignment\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\FIT5032---S3\5032_JiancongLei_30310016\FIT5032_studio\Assignment\Assignment\obj\Debug\Assignment.csprojAssemblyReference.cache
 D:\FIT5032---S3\5032_JiancongLei_30310016\FIT5032_studio\Assignment\Assignment\obj\Debug\Assignment.csproj.CoreCompileInputs.cache
 D:\FIT5032---S3\5032_JiancongLei_30310016\FIT5032_studio\Assignment\Assignment\obj\Debug\Assignment.csproj.CopyComplete
 D:\FIT5032---S3\5032_JiancongLei_30310016\FIT5032_studio\Assignment\Assignment\obj\Debug\Assignment.dll
 D:\FIT5032---S3\5032_JiancongLei_30310016\FIT5032_studio\Assignment\Assignment\obj\Debug\Assignment.pdb
+D:\FIT5032---S3\5032_JiancongLei_30310016\FIT5032_studio\Assignment\Assignment\bin\Notify.dll
+D:\FIT5032---S3\5032_JiancongLei_30310016\FIT5032_studio\Assignment\Assignment\obj\Debug\Assignment.csprojAssemblyReference.cache
