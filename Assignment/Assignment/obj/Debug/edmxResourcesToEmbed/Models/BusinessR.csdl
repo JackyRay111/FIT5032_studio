@@ -1,4 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="BusinessR" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
-  <EntityContainer Name="BusinessRContainer" annotation:LazyLoadingEnabled="true" />
+  <EntityContainer Name="BusinessRContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Activities" EntityType="BusinessR.Activity" />
+  </EntityContainer>
+  <EntityType Name="Activity">
+    <Key>
+      <PropertyRef Name="ActivityId" />
+    </Key>
+    <Property Name="ActivityId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AStartDate" Type="String" Nullable="false" />
+    <Property Name="ATypeId" Type="String" Nullable="false" />
+    <Property Name="AManagerName" Type="String" Nullable="false" />
+    <Property Name="AManagerEmail" Type="String" Nullable="false" />
+    <Property Name="AFee" Type="String" Nullable="false" />
+    <Property Name="ARequirment" Type="String" Nullable="false" />
+    <Property Name="AAvgCalorieComsumption" Type="String" Nullable="false" />
+    <Property Name="ADescription" Type="String" Nullable="false" />
+    <Property Name="AStatus" Type="String" Nullable="false" />
+    <Property Name="ARating" Type="String" Nullable="false" />
+  </EntityType>
 </Schema>
