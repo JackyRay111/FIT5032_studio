@@ -6,11 +6,19 @@
     <title>@ViewBag.Title - JoinSwimming</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet"/>
+    @* This is for the mapbox map. *@
+    <script src="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css" rel="stylesheet" />
+    @*This is used for the Geocoding Mapbox API*@
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.min.js"></script>
+    <link rel="stylesheet"
+          href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.css"
+          type="text/css" />
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
+        <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
@@ -22,18 +30,22 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    @*if (User.IsInRole("Administrator")) { 
-                       <li>@Html.ActionLink("AspNetUsers", "Index", "AspNetUsers")</li>
-                    }*@
-                    @if(User.IsInRole("User")){
-                    <li>@Html.ActionLink("Activity", "Index", "Activities")</li>
+                    @*if (User.IsInRole("Administrator")) {
+               <li>@Html.ActionLink("AspNetUsers", "Index", "AspNetUsers")</li>
+            }*@
+                    @if (User.IsInRole("User"))
+                    {
+                        <li>@Html.ActionLink("Activity", "Index", "Activities")</li>
+                        <li>@Html.ActionLink("Profile", "EditAndCreate", "UserProfile")</li>
                     }
                 </ul>
-                @Html.Partial("_LoginPartial")
+                <div class="container-fluid">
+                    @Html.Partial("_LoginPartial")
+                </div>
+                </div>
             </div>
-        </div>
     </div>
-    <div class="container body-content">
+    <div class="container-fluid body-content">
         @RenderBody()
         <hr />
         <footer>

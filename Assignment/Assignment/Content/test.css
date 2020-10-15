@@ -60,7 +60,12 @@
 .image-responsive {
     margin-left: auto;
     margin-right: auto;
+    width: 100%;
     
 }
 
+.body-content {
+    padding-right: 88px !important;
+    padding-left: 88px !important
+}
 

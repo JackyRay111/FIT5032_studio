@@ -176,63 +176,26 @@
     <Compile Include="Controllers\ActivitiesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\UserProfileController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\Activity.cs">
-      <DependentUpon>AssignmentModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ActivityCategory.cs">
-      <DependentUpon>AssignmentModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ActivityPlace.cs">
-      <DependentUpon>AssignmentModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ActivityType.cs">
-      <DependentUpon>AssignmentModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetRole.cs">
-      <DependentUpon>AssignmentModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetUser.cs">
-      <DependentUpon>AssignmentModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetUserClaim.cs">
-      <DependentUpon>AssignmentModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetUserLogin.cs">
-      <DependentUpon>AssignmentModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AssignmentModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AssignmentModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AssignmentModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AssignmentModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AssignmentModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AssignmentModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\C__MigrationHistory.cs">
-      <DependentUpon>AssignmentModel.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Models\Activity.cs" />
+    <Compile Include="Models\ActivityCategory.cs" />
+    <Compile Include="Models\ActivityPlace.cs" />
+    <Compile Include="Models\ActivityType.cs" />
+    <Compile Include="Models\AspNetRole.cs" />
+    <Compile Include="Models\AspNetUser.cs" />
+    <Compile Include="Models\AspNetUserClaim.cs" />
+    <Compile Include="Models\AspNetUserLogin.cs" />
+    <Compile Include="Models\AssignmentModel.cs" />
+    <Compile Include="Models\C__MigrationHistory.cs" />
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\JoinLog.cs">
-      <DependentUpon>AssignmentModel.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Models\JoinLog.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\RatingLog.cs">
-      <DependentUpon>AssignmentModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\UserProfile.cs">
-      <DependentUpon>AssignmentModel.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Models\RatingLog.cs" />
+    <Compile Include="Models\UserProfile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -457,16 +420,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\AssignmentModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>AssignmentModel.edmx</DependentUpon>
-      <LastGenOutput>AssignmentModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\AssignmentModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>AssignmentModel.edmx</DependentUpon>
-      <LastGenOutput>AssignmentModel.cs</LastGenOutput>
-    </Content>
     <Content Include="Scripts\bootstrap-datepicker.js" />
     <Content Include="Scripts\bootstrap-datepicker.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -475,13 +428,6 @@
     <Content Include="Content\bootstrap-datepicker3.css.map" />
     <Content Include="Content\bootstrap-datepicker.standalone.css.map" />
     <Content Include="Content\bootstrap-datepicker.css.map" />
-    <EntityDeploy Include="Models\AssignmentModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>AssignmentModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\AssignmentModel.edmx.diagram">
-      <DependentUpon>AssignmentModel.edmx</DependentUpon>
-    </Content>
     <Content Include="Content\DataTables\css\semanticui.scss" />
     <Content Include="Content\DataTables\css\mixins.scss" />
     <Content Include="Content\DataTables\css\common.scss" />
@@ -656,6 +602,7 @@
     <Content Include="Scripts\locales\bootstrap-datepicker.vi.min.js" />
     <Content Include="Scripts\locales\bootstrap-datepicker.zh-CN.min.js" />
     <Content Include="Scripts\locales\bootstrap-datepicker.zh-TW.min.js" />
+    <Content Include="Scripts\Location.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\moment-with-locales.js" />
     <Content Include="Scripts\moment-with-locales.min.js" />
@@ -695,11 +642,11 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Activities\Create.cshtml" />
-    <Content Include="Views\Activities\Delete.cshtml" />
-    <Content Include="Views\Activities\Details.cshtml" />
-    <Content Include="Views\Activities\Edit.cshtml" />
+    <Content Include="Views\Activities\Course.cshtml" />
+    <Content Include="Views\Activities\QulitifyE.cshtml" />
+    <Content Include="Views\Activities\Event.cshtml" />
     <Content Include="Views\Activities\Index.cshtml" />
+    <Content Include="Views\UserProfile\EditAndCreate.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -717,7 +664,9 @@
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Views\Location\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

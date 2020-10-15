@@ -2,14 +2,15 @@
     ViewBag.Title = "JoinSwimming";
 }
 <link href="~/Content/test.css" rel="stylesheet" />
-<h1>@ViewBag.Title</h1>
-<div>
+<h1 class="container">@ViewBag.Title</h1>
+<div class="container">
     <img src="@Url.Content("~/Content/images/1.png")" alt="" class="img-responsive" />
 </div>
-<h2>You can select to Join Swimming:</h2>
+<br/>
+<br/>
 <div class="Row">
     <div class="Column">
-        <a href="@Url.Action("About", "Home")">
+        <a href="@Url.Action("Course", "Activities")">
             <img src="@Url.Content("~/Content/images/course.png")" alt="course" class="image" />
             <div class="overlay">
                 <div class="text">Course</div>
@@ -18,7 +19,7 @@
         <div class="text-caption">Course</div>
     </div>
     <div class="Column">
-        <a href="@Url.Action("About", "Home")">
+        <a href="@Url.Action("QulitifyE", "Activities")">
             <img src="@Url.Content("~/Content/images/qualifying examination.png")" alt="qualifying examination" class="image" />
             <div class="overlay">
                 <div class="text">Qualifying Examination</div>
@@ -27,7 +28,7 @@
         <div class="text-caption">Qualifying Examination</div>
     </div>
     <div class="Column">
-        <a href="@Url.Action("About", "Home")">
+        <a href="@Url.Action("Event", "Activities")">
             <img src="@Url.Content("~/Content/images/events.png")" alt="events" class="image" />            
             <div class="overlay">
                 <div class="text">Events</div>
