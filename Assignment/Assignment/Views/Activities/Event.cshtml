@@ -4,7 +4,7 @@
     ViewBag.Title = "Event";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+<link href="~/Content/DataTables/css/dataTables.bootstrap.min.css" rel="stylesheet" />
 <h2>Event</h2>
 
 
@@ -78,9 +78,4 @@
 </table>
 @section Scripts {
     @Scripts.Render("~/Scripts/DataTables")
-    <script>
-        $(document).ready(function () {
-            $('.table').DataTable();
-        });
-    </script>
     }

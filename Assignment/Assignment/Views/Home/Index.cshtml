@@ -1,11 +1,9 @@
 ﻿@{
     ViewBag.Title = "JoinSwimming";
 }
-<link href="~/Content/test.css" rel="stylesheet" />
-<h1 class="container">@ViewBag.Title</h1>
-<div class="container">
+@Styles.Render("~/Content/Homepage")
+<h1>@ViewBag.Title</h1>
     <img src="@Url.Content("~/Content/images/1.png")" alt="" class="img-responsive" />
-</div>
 <br/>
 <br/>
 <div class="Row">
@@ -16,7 +14,7 @@
                 <div class="text">Course</div>
             </div>
         </a>
-        <div class="text-caption" id="course">Course</div>
+        <div class="text-caption">Course</div>
     </div>
     <div class="Column">
         <a href="@Url.Action("QulitifyE", "Activities")">
@@ -25,7 +23,7 @@
                 <div class="text">Exame</div>
             </div>
         </a>
-        <div class="text-caption" id="exame">Exame</div>
+        <div class="text-caption">Exame</div>
     </div>
     <div class="Column">
         <a href="@Url.Action("Event", "Activities")">
@@ -34,7 +32,7 @@
                 <div class="text">Events</div>
             </div>
         </a>
-        <div class="text-caption" id="events">Events</div>
+        <div class="text-caption">Events</div>
     </div>
 </div>
 

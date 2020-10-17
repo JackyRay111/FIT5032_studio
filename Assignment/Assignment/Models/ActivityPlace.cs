@@ -20,9 +20,11 @@ namespace Assignment.Models
         public string ActivityPlaceName { get; set; }
 
         [Column(TypeName = "numeric")]
+        [DisplayFormat(DataFormatString = "{0:###.########}")]
         public decimal ActivityPlaceLongitude { get; set; }
 
         [Column(TypeName = "numeric")]
+        [DisplayFormat(DataFormatString = "{0:##.########}")]
         public decimal ActivityPlaceLatitude { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

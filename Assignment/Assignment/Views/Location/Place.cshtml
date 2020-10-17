@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Assignment.Models.ActivityPlace>
+
+@{
+    ViewBag.Title = "Place";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Place</h2><div id="map" style="height:500px"></div>
+<br. />
+<br />
+<br />
+<table class="table">
+
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ActivityPlaceName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ActivityPlaceLongitude)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ActivityPlaceLatitude)
+        </th>
+        <th></th>
+    </tr>
+
+
+    @foreach (var item in Model)
+    {
+        <tr class="coordinates">
+            <td class="description">
+                @Html.DisplayFor(modelItem => item.ActivityPlaceName)
+            </td>
+            <td class="latitude">
+                @Html.DisplayFor(modelItem => item.ActivityPlaceLatitude)
+            </td>
+            <td class="longitude">
+                @Html.DisplayFor(modelItem => item.ActivityPlaceLongitude)
+            </td>
+
+        </tr>
+    }
+</table>
+@section Scripts {
+    @Scripts.Render("~/bundles/mapbox")
+}

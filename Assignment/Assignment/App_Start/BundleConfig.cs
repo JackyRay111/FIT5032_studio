@@ -27,7 +27,12 @@ namespace Assignment
                       "~/Content/site.css"));
             bundles.Add(new StyleBundle("~/Scripts/DataTables").Include(
                       "~/Scripts/DataTables/jquery.dataTables.js",
-                      "~/Scripts/DataTables/dataTables.bootstrap.js"));
+                      "~/Scripts/DataTables/dataTables.bootstrap.js",
+                      "~/Scripts/dataTables.js"));
+            bundles.Add(new StyleBundle("~/Content/Homepage").Include(
+                      "~/Content/test.css"));
+            bundles.Add(new ScriptBundle("~/bundles/mapbox").Include(
+                       "~/Scripts/location.js"));
         }
     }
 }
