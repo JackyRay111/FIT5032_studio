@@ -16,7 +16,8 @@ namespace Assignment.Controllers
 
         public ActionResult About()
         {
-
+            ViewBag.Title = "11111";
+            ViewBag.Message = "11111";
             return View();
         }
         public ActionResult Contact()

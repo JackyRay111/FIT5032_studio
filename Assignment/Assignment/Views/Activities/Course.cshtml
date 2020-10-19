@@ -37,6 +37,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.ActivityRating)
             </th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -70,6 +71,9 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.ActivityRating)
+                </td>
+                <td>
+                    @Html.ActionLink("Book" ,"Book", new { id = item.Id })
                 </td>
             </tr>
         }

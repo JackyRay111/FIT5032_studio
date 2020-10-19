@@ -9,7 +9,7 @@ namespace Assignment.Controllers
 {
     public class LocationController : Controller
     {
-        AssignmentModel db = new AssignmentModel();
+        private AssignmentModel db = new AssignmentModel();
         public ActionResult Place()
         {
             var place = db.ActivityPlaces.ToList();

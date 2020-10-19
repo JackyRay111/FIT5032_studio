@@ -106,4 +106,3 @@ D:\FIT5032---S3\5032_JiancongLei_30310016\FIT5032_studio\Assignment\Assignment\o
 D:\FIT5032---S3\5032_JiancongLei_30310016\FIT5032_studio\Assignment\Assignment\obj\Debug\Assignment.dll
 D:\FIT5032---S3\5032_JiancongLei_30310016\FIT5032_studio\Assignment\Assignment\obj\Debug\Assignment.pdb
 D:\FIT5032---S3\5032_JiancongLei_30310016\FIT5032_studio\Assignment\Assignment\bin\Notify.dll
-D:\FIT5032---S3\5032_JiancongLei_30310016\FIT5032_studio\Assignment\Assignment\obj\Debug\Assignment.csprojAssemblyReference.cache
