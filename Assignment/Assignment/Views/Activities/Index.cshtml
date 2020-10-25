@@ -73,7 +73,11 @@
                     @Html.DisplayFor(modelItem => item.ActivityRating)
                 </td>
                 <td>
-                    @Html.ActionLink("Book" ,"Book", new { id = item.Id })
+                    @if (User.IsInRole("Administrator"))
+                    {
+                    
+                    }
+                    @Html.ActionLink("Book", "Book", new { id = item.Id })
                 </td>
             </tr>
         }

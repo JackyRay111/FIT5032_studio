@@ -31,8 +31,9 @@
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                     @if (User.IsInRole("Administrator")) {
                         <li>@Html.ActionLink("UserControl", "Index", "UserControl")</li>
+                        <li>@Html.ActionLink("Send Email", "Send_Email", "Home")</li>
                      }
-                    @if (User.IsInRole("User"))
+                    @if (User.Identity.IsAuthenticated && !User.IsInRole("Administrator"))
                     {
                         <li>@Html.ActionLink("Activity", "Index", "Activities")</li>
                         <li>@Html.ActionLink("Profile", "EditAndCreate", "UserProfile")</li>

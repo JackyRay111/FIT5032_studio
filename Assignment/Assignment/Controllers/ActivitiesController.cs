@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using Assignment.Models;
 using Microsoft.AspNet.Identity;
+using Assignment.Utils;
 
 namespace Assignment.Controllers
 {
@@ -56,11 +57,16 @@ namespace Assignment.Controllers
                 joinlog.ActivityId = id ?? default(int);
                 joinlog.AspNetUserId = userId;
                 joinlog.JoinDate = DateTime.Now;
+                var user = db.UserProfiles.Find(userId);
+                var activity = db.Activities.Find(id);
+                EmailSender es = new EmailSender();
+
                 if (ModelState.IsValid)
                 {
                     db.JoinLogs.Add(joinlog);
                     db.SaveChanges();
                     ViewBag.Message = "you are successfully book this activity";
+                    es.Send(activity, user);
                     return View();
                 }
             }

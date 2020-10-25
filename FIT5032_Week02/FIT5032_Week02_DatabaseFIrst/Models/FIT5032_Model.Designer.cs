@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'D:\FIT5032---S3\Jacky_projects\FIT5032_Week02_DatabaseFIrst\Models\FIT5032_Model.edmx'. 
+﻿// T4 code generation is enabled for model 'D:\FIT5032---S3\5032_JiancongLei_30310016\FIT5032_studio\FIT5032_Week02\FIT5032_Week02_DatabaseFIrst\Models\FIT5032_Model.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.
