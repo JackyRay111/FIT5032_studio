@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Web;
 using Assignment.Models;
 using Microsoft.AspNet.Identity;
+using System.IO;
 
 namespace Assignment.Utils
 {
@@ -16,7 +17,7 @@ namespace Assignment.Utils
         // Please use your API KEY here.
         private const String API_KEY = "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";
 
-        public void Send(String toEmail, String subject, String contents)
+        public void Send(String toEmail, String subject, String contents, string path)
         {
             var client = new SendGridClient(API_KEY);
             var from = new EmailAddress("jackyray111@gmail.com", "JoinSwimming");
@@ -24,6 +25,9 @@ namespace Assignment.Utils
             var plainTextContent = contents;
             var htmlContent = "<p>" + contents + "</p>";
             var msg = MailHelper.CreateSingleEmail(from, to, subject, plainTextContent, htmlContent);
+            var bytes = File.ReadAllBytes(path);
+            var file = Convert.ToBase64String(bytes);
+            msg.AddAttachment("Attachment.jpg", file);
             var response = client.SendEmailAsync(msg);
         }
 
