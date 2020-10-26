@@ -5,8 +5,16 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <link href="~/Content/DataTables/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/bootstrap-datepicker.min.css" rel="stylesheet" />
 <h2>Course</h2>
-
+<br./>
+<br./>
+<div>
+    <label >Select Date</label>
+    <div><input data-provide="datepicker" id="datepicker"></div>
+</div>
+<br./>
+<br./>
 <table class="table">
     <thead>
         <tr>
@@ -73,12 +81,33 @@
                     @Html.DisplayFor(modelItem => item.ActivityRating)
                 </td>
                 <td>
-                    @Html.ActionLink("Book" ,"Book", new { id = item.Id })
+                    @Html.ActionLink("Book", "Book", new { id = item.Id })
                 </td>
             </tr>
         }
     </tbody>
 </table>
 @section Scripts {
-    @Scripts.Render("~/Scripts/DataTables")
-    }
+    <script src="~/Scripts/bootstrap-datepicker.min.js"></script>
+    <script src="~/Scripts/DataTables/dataTables.bootstrap.min.js"></script>
+    <script src="~/Scripts/DataTables/jquery.dataTables.min.js"></script>
+    <script>
+        $(function () {
+            var today = new Date()
+
+            var dataTable = $('.table').DataTable();
+
+            $('#datepicker').datepicker({
+                defaultViewDate: today,
+                format: "dd/mm/yyyy",
+                startDate: today
+            })
+
+            $('#datepicker').on('keyup click change', function () {
+                var v = $(this).val();
+                dataTable.search(v).draw();
+            });
+            //$('#datepicker').datepicker('show');
+        });
+    </script>
+}

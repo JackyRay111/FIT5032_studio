@@ -1,37 +1,33 @@
 ﻿
 @{
     ViewBag.Title = "DatePicker";
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>DatePicker</h2>
+<link href="~/Content/bootstrap-datepicker.min.css" rel="stylesheet" />
 
-<html>
-<head>
-    <script type="text/javascript" src='https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.3.min.js'></script>
-    <script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/js/bootstrap.min.js'></script>
-    <link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/css/bootstrap.min.css'
-          media="screen" />
-    <!-- Bootstrap -->
-    <!-- Bootstrap DatePicker -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.css" type="text/css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.js" type="text/javascript"></script>
-    <script type="text/javascript">
+
+
+
+<div>
+    <input data-provide="datepicker" id="datepicker">
+</div>
+
+@section Scripts{
+    <script src="~/Scripts/bootstrap-datepicker.min.js"></script>
+    <script>
         $(function () {
+            var today = new Date()
             $('#datepicker').datepicker({
-                defaultViewDate:
-                    { day: 20, month: 7, year: 2020},
-                format: "dd/mm/yyyy"
+                defaultViewDate: today,
+                format: "dd/mm/yyyy",
+                startDate :today
             })
-           $('#datepicker').datepicker('update', "20/08/2020");
-           //$('#datepicker').datepicker('show');
+            $('#datepicker').datepicker('update', today);
+            //$('#datepicker').datepicker('show');
         })
     </script>
-</head>
-<body>
-    <input data-provide="datepicker" id="datepicker">
-</body>
+}
 
 
-
-</html>
