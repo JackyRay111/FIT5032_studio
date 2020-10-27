@@ -19,7 +19,7 @@ namespace Assignment.Controllers
         [Authorize]
         public ActionResult Index()
         {
-            var activities = db.Activities.Include(a => a.ActivityCategory).Include(a => a.ActivityPlace).Include(a => a.ActivityType);
+            var activities = db.Activities;
             return View(activities.ToList());
         }
 
@@ -44,7 +44,7 @@ namespace Assignment.Controllers
             var activities = db.Activities.Include(a => a.ActivityCategory).Include(a => a.ActivityPlace).Include(a => a.ActivityType);
             return View(activities.Where(a => a.ActivityTypeId == 3).ToList());
         }
-
+        [Authorize]
         public ActionResult Book(int? id)
         {
             ViewBag.Message = "";

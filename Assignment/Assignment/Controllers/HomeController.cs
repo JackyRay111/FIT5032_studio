@@ -31,6 +31,7 @@ namespace Assignment.Controllers
             return View(new SendEmailViewModel());
         }
 
+        [Authorize]
         [HttpPost]
         public ActionResult Send_Email(SendEmailViewModel model, HttpPostedFileBase postedFile)
         {

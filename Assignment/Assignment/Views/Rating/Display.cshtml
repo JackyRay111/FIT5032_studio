@@ -1,0 +1,77 @@
+﻿@model IEnumerable<Assignment.Models.RatingLog>
+
+@{
+    ViewBag.Title = "RatingAndComment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/DataTables/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+<h2>@Html.DisplayNameFor(model => model.ActivityPlace.ActivityPlaceName)</h2>
+
+<table id="datatable" class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Comments)
+            </th>
+            <th>
+                User
+            </th>
+            <th>Rating</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Comments)
+                    <br />
+
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AspNetUser.Email)
+                    <br />
+                    <p>Comment on: @Html.DisplayFor(modelItem => item.RatingDate) </p>
+                </td>
+                <td>
+                    @for (int i = 0; i < item.Rating; i++)
+                    {
+                        <span class="glyphicon glyphicon-star"></span>
+                    }
+                    @for (int i = item.Rating; i < 5; i++)
+                    {
+                        <span class="glyphicon glyphicon-star-empty"></span>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@using (Html.BeginForm("RatingAndComment", "Rating", FormMethod.Post, new { onsubmit = "return VerifyRating()" }))
+{
+    <textarea rows="10" name="Comment" id="textComment"> </textarea>
+    <div onmouseout="RateSelected()">
+        <span id="span1" onmouseout="RateOut(1)" onmousemove="RateOver(1)" onclick="RateClick(1)" class="glyphicon glyphicon-star-empty"></span>
+        <span id="span2" onmouseout="RateOut(2)" onmousemove="RateOver(2)" onclick="RateClick(2)" class="glyphicon glyphicon-star-empty"></span>
+        <span id="span3" onmouseout="RateOut(3)" onmousemove="RateOver(3)" onclick="RateClick(3)" class="glyphicon glyphicon-star-empty"></span>
+        <span id="span4" onmouseout="RateOut(4)" onmousemove="RateOver(4)" onclick="RateClick(4)" class="glyphicon glyphicon-star-empty"></span>
+        <span id="span5" onmouseout="RateOut(5)" onmousemove="RateOver(5)" onclick="RateClick(5)" class="glyphicon glyphicon-star-empty"></span>
+    </div>
+    <div>
+        <input type="hidden" name="Rating" id="fnrating" value="0" />
+    </div>
+    <div>
+        <input type="hidden" name="PlaceId" id="PlaceId" value="@ViewBag.Id" />
+    </div>
+    <div>
+        <input type="submit" class="btn btn-primary active" name="SaveComment" value="Save Coment" />
+    </div>
+}
+
+
+@section Scripts{
+    @Scripts.Render("~/Scripts/DataTables")
+    <script src="~/Scripts/Rating.js"></script>
+
+}

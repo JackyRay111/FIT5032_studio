@@ -7,86 +7,29 @@
 <link href="~/Content/DataTables/css/dataTables.bootstrap.min.css" rel="stylesheet" />
 <link href="~/Content/bootstrap-datepicker.min.css" rel="stylesheet" />
 <h2>Course</h2>
-<br./>
-<br./>
-<div>
-    <label >Select Date</label>
+<br />
+<br />
+
+<div class="col-lg-2">
+    <label>Select Date</label>
     <div><input data-provide="datepicker" id="datepicker"></div>
 </div>
-<br./>
-<br./>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.ActivityCategory.CategoryName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ActivityPlace.ActivityPlaceName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ActivityType.ActivityTypeName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ActivityName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ActivityStartDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ActivityDuration)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ActivityDescription)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ActivityStatus)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ActivityRating)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
 
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ActivityCategory.CategoryName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ActivityPlace.ActivityPlaceName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ActivityType.ActivityTypeName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ActivityName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ActivityStartDate)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ActivityDuration)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ActivityDescription)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ActivityStatus)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ActivityRating)
-                </td>
-                <td>
-                    @Html.ActionLink("Book", "Book", new { id = item.Id })
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+@Html.Partial("_ActivityPartial")
 @section Scripts {
     <script src="~/Scripts/bootstrap-datepicker.min.js"></script>
     <script src="~/Scripts/DataTables/dataTables.bootstrap.min.js"></script>
@@ -95,7 +38,7 @@
         $(function () {
             var today = new Date()
 
-            var dataTable = $('.table').DataTable();
+            var dataTable = $('#datatable').DataTable();
 
             $('#datepicker').datepicker({
                 defaultViewDate: today,

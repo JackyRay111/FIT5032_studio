@@ -32,11 +32,6 @@ namespace Assignment.Models
                 .WithRequired(e => e.Activity)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<Activity>()
-                .HasMany(e => e.RatingLogs)
-                .WithRequired(e => e.Activity)
-                .WillCascadeOnDelete(false);
-
             modelBuilder.Entity<ActivityCategory>()
                 .HasMany(e => e.Activities)
                 .WithRequired(e => e.ActivityCategory)
@@ -52,6 +47,11 @@ namespace Assignment.Models
 
             modelBuilder.Entity<ActivityPlace>()
                 .HasMany(e => e.Activities)
+                .WithRequired(e => e.ActivityPlace)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<ActivityPlace>()
+                .HasMany(e => e.RatingLogs)
                 .WithRequired(e => e.ActivityPlace)
                 .WillCascadeOnDelete(false);
 

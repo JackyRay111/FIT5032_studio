@@ -12,6 +12,7 @@ namespace Assignment.Models
         public ActivityPlace()
         {
             Activities = new HashSet<Activity>();
+            RatingLogs = new HashSet<RatingLog>();
         }
 
         public int Id { get; set; }
@@ -27,7 +28,13 @@ namespace Assignment.Models
         [DisplayFormat(DataFormatString = "{0:##.########}")]
         public decimal ActivityPlaceLatitude { get; set; }
 
+        [DisplayFormat(DataFormatString = "{0:#.##}")]
+        public double? Rating { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Activity> Activities { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<RatingLog> RatingLogs { get; set; }
     }
 }

@@ -12,7 +12,7 @@ namespace Assignment.Models
         public Activity()
         {
             JoinLogs = new HashSet<JoinLog>();
-            RatingLogs = new HashSet<RatingLog>();
+
         }
 
         public int Id { get; set; }
@@ -24,15 +24,8 @@ namespace Assignment.Models
         [DataType(DataType.Date)]
         public DateTime ActivityStartDate { get; set; }
 
-        public int ActivityDuration { get; set; }
-
         [Required]
         public string ActivityDescription { get; set; }
-
-        [Required]
-        public string ActivityStatus { get; set; }
-
-        public int ActivityRating { get; set; }
 
         public int ActivityTypeId { get; set; }
 
@@ -49,7 +42,5 @@ namespace Assignment.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<JoinLog> JoinLogs { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RatingLog> RatingLogs { get; set; }
     }
 }

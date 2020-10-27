@@ -12,7 +12,6 @@ namespace Assignment.Models
 
         public int Rating { get; set; }
 
-        [Required]
         public string Comments { get; set; }
 
         [Column(TypeName = "date")]
@@ -22,9 +21,9 @@ namespace Assignment.Models
         [StringLength(128)]
         public string AspNetUserId { get; set; }
 
-        public int ActivityId { get; set; }
+        public int ActivityPlaceId { get; set; }
 
-        public virtual Activity Activity { get; set; }
+        public virtual ActivityPlace ActivityPlace { get; set; }
 
         public virtual AspNetUser AspNetUser { get; set; }
     }

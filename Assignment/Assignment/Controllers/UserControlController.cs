@@ -15,12 +15,15 @@ namespace Assignment.Controllers
         private AssignmentModel db = new AssignmentModel();
 
         // GET: UserControl
+
+        [Authorize]
         public ActionResult Index()
         {
             var aspNetUsers = db.AspNetUsers.Include(a => a.UserProfile);
             return View(aspNetUsers.ToList());
         }
 
+        [Authorize]
         // GET: UserControl/Delete/5
         public ActionResult Delete(string id)
         {
@@ -36,6 +39,7 @@ namespace Assignment.Controllers
             return View(aspNetUser);
         }
 
+        [Authorize]
         // POST: UserControl/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]

@@ -15,6 +15,7 @@ namespace Assignment.Controllers
     {
         private AssignmentModel db = new AssignmentModel();
         // GET: MyActivities
+        [Authorize]
         public ActionResult MyActivity()
         {
             var userId = User.Identity.GetUserId();
@@ -22,6 +23,7 @@ namespace Assignment.Controllers
             return View(record.ToList());
         }
 
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -37,6 +39,7 @@ namespace Assignment.Controllers
             return View(joinLog);
         }
 
+        [Authorize]
         // POST: Locations/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
