@@ -23,12 +23,17 @@ namespace Assignment.Controllers
         {
             var rating = db.RatingLogs.Where(a => a.ActivityPlaceId == id).ToList();
             ViewBag.Id = id;
+            if (id != null)
+            {
+                ViewBag.Title = db.ActivityPlaces.Find(id).ActivityPlaceName;
+            }
             return View(rating);
         }
 
         // POST: Rating/Create
         [HttpPost]
-        public ActionResult RatingAndComment(int PlaceId, int Rating, string Comment)
+        [ValidateInput(false)]
+        public ActionResult RatingAndComment(int PlaceId, int Rating, string Comments)
         {
             var userId = User.Identity.GetUserId();
 
@@ -38,7 +43,7 @@ namespace Assignment.Controllers
             {
                 RatingLog rating = new RatingLog();
                 rating.ActivityPlaceId = PlaceId;
-                rating.Comments = Comment;
+                rating.Comments = Comments;
                 rating.Rating = Rating;
                 rating.AspNetUserId = userId;
                 rating.RatingDate = DateTime.Now;

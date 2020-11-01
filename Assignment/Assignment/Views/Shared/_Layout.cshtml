@@ -36,7 +36,7 @@
                     @if (User.Identity.IsAuthenticated && !User.IsInRole("Administrator"))
                     {
                         <li>@Html.ActionLink("Activity", "Index", "Activities")</li>
-                        <li>@Html.ActionLink("Profile", "EditAndCreate", "UserProfile")</li>
+                        <li>@Html.ActionLink("Profile", "Index", "UserProfile")</li>
                         <li>@Html.ActionLink("Location", "Place", "Location")</li>
                         <li>@Html.ActionLink("MyActivities", "MyActivity", "MyActivities")</li>
                     }

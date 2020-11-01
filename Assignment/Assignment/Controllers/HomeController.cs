@@ -9,9 +9,11 @@ using System.IO;
 
 namespace Assignment.Controllers
 {
+    
     [RequireHttps]
     public class HomeController : Controller
     {
+        private AssignmentModel db = new AssignmentModel();
         public ActionResult Index()
         {
             return View();
@@ -41,7 +43,7 @@ namespace Assignment.Controllers
             {
                 try
                 {
-                    String toEmail = model.ToEmail;
+                    List<String> toEmail = db.AspNetUsers.Select(a => a.Email).ToList();
                     String subject = model.Subject;
                     String contents = model.Contents;
                     string serverPath = Server.MapPath("~/Uploads/");

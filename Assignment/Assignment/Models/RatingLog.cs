@@ -5,6 +5,7 @@ namespace Assignment.Models
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    using System.Web.Mvc;
 
     public partial class RatingLog
     {
@@ -12,9 +13,10 @@ namespace Assignment.Models
 
         public int Rating { get; set; }
 
+        [AllowHtml]
         public string Comments { get; set; }
 
-        [Column(TypeName = "date")]
+        
         public DateTime RatingDate { get; set; }
 
         [Required]

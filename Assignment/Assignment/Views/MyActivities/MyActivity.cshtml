@@ -7,6 +7,15 @@
 
 <h2>MyActivity</h2>
 
+<div style="padding-bottom: 10px">
+    <a href="@Url.Action("Report", "Report")" class="btn btn-primary">
+        <span>
+            <strong>Generate Your Personal Report</strong>
+        </span>
+    </a>
+</div>
+
+
 <table class="table">
     <tr>
         <th>
@@ -33,7 +42,13 @@
             @Html.DisplayFor(modelItem => item.JoinDate)
         </td>
         <td>
-            @Html.ActionLink("Delete", "Delete", new {  id=item.Id  })
+            @if (item.Activity.ActivityStartDate > DateTime.Now)
+            {
+            @Html.ActionLink("Cancel", "Delete", new { id = item.Id })
+            }
+            else { 
+            <p>Activity Done</p>
+            }
         </td>
     </tr>
 }

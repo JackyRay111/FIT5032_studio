@@ -15,10 +15,10 @@
         <th>
             @Html.DisplayNameFor(model => model.ActivityPlaceName)
         </th>
-        <th>
+        <th style="display: none">
             @Html.DisplayNameFor(model => model.ActivityPlaceLongitude)
         </th>
-        <th>
+        <th style="display: none">
             @Html.DisplayNameFor(model => model.ActivityPlaceLatitude)
         </th>
         <th></th>
@@ -41,10 +41,10 @@
                 }
                 <span> ( @Html.DisplayFor(modelItem => item.Rating) ) </span>
             </td>
-            <td class="latitude">
+            <td class="latitude" style="display: none" >
                 @Html.DisplayFor(modelItem => item.ActivityPlaceLatitude)
             </td>
-            <td class="longitude">
+            <td class="longitude" style="display: none">
                 @Html.DisplayFor(modelItem => item.ActivityPlaceLongitude)
             </td>
             <td>

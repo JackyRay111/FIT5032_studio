@@ -15,6 +15,20 @@ namespace Assignment.Controllers
     {
         private AssignmentModel db = new AssignmentModel();
 
+        [Authorize]
+        public ActionResult Index()
+        {
+            var userId = User.Identity.GetUserId();
+            UserProfile userProfile = db.UserProfiles.Find(userId);
+            if (userProfile == null)
+            {
+                userProfile = new UserProfile();
+                userProfile.Id = userId;
+                userProfile.Email = db.AspNetUsers.Find(userId).Email;
+            }
+            return View(userProfile);
+        }
+
         // GET: UserProfile/Edit/5
         [Authorize]
         public ActionResult EditAndCreate()
@@ -26,6 +40,7 @@ namespace Assignment.Controllers
            {
                 userProfile = new UserProfile();
                 userProfile.Id = userId;
+                userProfile.Email = db.AspNetUsers.Find(userId).Email;
            }
            return View(userProfile);
         }
@@ -47,19 +62,19 @@ namespace Assignment.Controllers
                 {
                     db.UserProfiles.Add(userProfile);
                     db.SaveChanges();
-                    return View(db.UserProfiles.Find(userId));
+                    return RedirectToAction("Index");
                 }
                 else
                 {
                     db.Entry(userP).State = EntityState.Modified;
                     db.Entry(userP).CurrentValues.SetValues(userProfile);
                     db.SaveChanges();
-                    return View(db.UserProfiles.Find(userId));
+                    return RedirectToAction("Index");
                 }
             }
             
 
-            return View(userProfile);
+            return View();
         }
     }
 }

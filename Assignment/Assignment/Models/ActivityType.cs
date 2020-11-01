@@ -17,6 +17,7 @@ namespace Assignment.Models
         public int Id { get; set; }
 
         [Required]
+        [Display(Name = "Type")]
         public string ActivityTypeName { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

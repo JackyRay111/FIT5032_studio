@@ -18,6 +18,7 @@ namespace Assignment.Models
         public int Id { get; set; }
 
         [Required]
+        [Display(Name = "Place")]
         public string ActivityPlaceName { get; set; }
 
         [Column(TypeName = "numeric")]

@@ -18,15 +18,18 @@ namespace Assignment.Models
         public int Id { get; set; }
 
         [Required]
+        [Display(Name = "Name")]
         public string ActivityName { get; set; }
 
         [Column(TypeName = "date")]
         [DataType(DataType.Date)]
+        [Display(Name = "StartDate")]
         public DateTime ActivityStartDate { get; set; }
 
         [Required]
+        [Display(Name = "Description")]
         public string ActivityDescription { get; set; }
-
+        [Display(Name = "")]
         public int ActivityTypeId { get; set; }
 
         public int ActivityPlaceId { get; set; }

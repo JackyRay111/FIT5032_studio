@@ -1,0 +1,143 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Your Personal Report</h1>
+
+<br/>
+<br />
+<br />
+<br />
+
+<div id="chartContainer" style="height: 600px; width: 100%;"></div>
+<button class="btn invisible" id="backButton">&lt; Back</button>
+<script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+@section Scripts{
+    <script>
+window.onload = function () {
+
+	var totalVisitors = @ViewBag.Total;
+	var visitorsData = {
+	"Reports": [{
+		click: visitorsChartDrilldownHandler,
+		cursor: "pointer",
+		explodeOnClick: false,
+		innerRadius: "75%",
+		legendMarkerType: "square",
+		name: "Personal Report",
+		radius: "100%",
+		showInLegend: true,
+		startAngle: 90,
+		type: "doughnut",
+		dataPoints: @Html.Raw(ViewBag.Reports)
+	}],
+	"Course": [{
+		color: "#E7823A",
+		name: "Course",
+		type: "column",
+		xValueType: "dateTime",
+		dataPoints:  @Html.Raw(ViewBag.Course)
+	}],
+	"Qulitifying Examination": [{
+		color: "#546BC1",
+        name: "Qulitifying Examination",
+		type: "column",
+		xValueType: "dateTime",
+		dataPoints:  @Html.Raw(ViewBag.QE)
+	}],
+	"Events": [{
+		color: "#546BC1",
+		name: "Events",
+		type: "column",
+		xValueType: "dateTime",
+		dataPoints:  @Html.Raw(ViewBag.Events)
+	}]
+};
+
+var newVSReturningVisitorsOptions = {
+	animationEnabled: true,
+	theme: "light2",
+	title: {
+		text: "Personal Reports"
+	},
+    exportEnabled: true,
+	subtitles: [{
+		text: "Click on Any Segment to Drilldown",
+		backgroundColor: "#2eacd1",
+		fontSize: 16,
+		fontColor: "white",
+		padding: 5
+	}],
+	legend: {
+		fontFamily: "calibri",
+		fontSize: 14,
+		itemTextFormatter: function (e) {
+			return e.dataPoint.name + ": " + Math.round(e.dataPoint.y / totalVisitors * 100) + "%";
+		}
+	},
+	data: []
+};
+
+var visitorsDrilldownedChartOptions = {
+	animationEnabled: true,
+    exportEnabled: true,
+	theme: "light2",
+	axisX: {
+		labelFontColor: "#717171",
+		lineColor: "#a2a2a2",
+		tickColor: "#a2a2a2"
+	},
+	axisY: {
+		gridThickness: 0,
+		includeZero: false,
+		labelFontColor: "#717171",
+		lineColor: "#a2a2a2",
+		tickColor: "#a2a2a2",
+		lineThickness: 1
+	},
+	data: []
+};
+
+	var chart = new CanvasJS.Chart("chartContainer", newVSReturningVisitorsOptions);
+    chart.options.data = visitorsData["Reports"];
+
+chart.render();
+
+function visitorsChartDrilldownHandler(e) {
+	chart = new CanvasJS.Chart("chartContainer", visitorsDrilldownedChartOptions);
+    exportEnabled: true,
+	chart.options.data = visitorsData[e.dataPoint.name];
+	chart.options.title = { text: e.dataPoint.name }
+	chart.render();
+	$("#backButton").toggleClass("invisible");
+}
+
+$("#backButton").click(function () {
+	$(this).toggleClass("invisible");
+	chart = new CanvasJS.Chart("chartContainer", newVSReturningVisitorsOptions);
+    chart.options.data = visitorsData["Reports"];
+	chart.render();
+});
+
+		}
+    </script>
+    <style>
+        #backButton {
+            border-radius: 4px;
+            padding: 8px;
+            border: none;
+            font-size: 16px;
+            background-color: #2eacd1;
+            color: white;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+
+        .invisible {
+            display: none;
+        }
+    </style>
+}          

@@ -1,5 +1,5 @@
 ﻿@model IEnumerable<Assignment.Models.Activity>
-<table id="datatable" class="table">
+<table id="dtable" class="table">
     <thead>
         <tr>
             <th>
@@ -47,11 +47,21 @@
                     @Html.DisplayFor(modelItem => item.ActivityDescription)
                 </td>
                 <td>
-                    <a href="@Url.Action("Book", new { id = item.Id})" class="glyphicon glyphicon-plus" >
+                    @if (item.ActivityStartDate > DateTime.Now)
+                    {
+                    <a href="@Url.Action("Book", new { id = item.Id })" class="btn btn-primary">
                         <span>
                             <strong>Book</strong>
                         </span>
                     </a>
+                    }
+                    else { 
+                    <a href="@Url.Action("Book", new { id = item.Id })" class="btn btn-primary disabled">
+                        <span>
+                            <strong>Book</strong>
+                        </span>
+                    </a>
+                    }
                 </td>
             </tr>
         }

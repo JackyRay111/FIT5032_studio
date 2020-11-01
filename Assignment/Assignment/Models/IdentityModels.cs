@@ -21,7 +21,7 @@ namespace Assignment.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("AssignmentModel", throwIfV1Schema: false)
         {
         }
 
