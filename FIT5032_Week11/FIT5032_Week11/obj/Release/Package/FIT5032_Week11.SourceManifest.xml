@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sitemanifest>
+  <IisApp path="D:\FIT5032---S3\5032_JiancongLei_30310016\FIT5032_studio\FIT5032_Week11\FIT5032_Week11\obj\Release\Package\PackageTmp" />
+  <setAcl path="D:\FIT5032---S3\5032_JiancongLei_30310016\FIT5032_studio\FIT5032_Week11\FIT5032_Week11\obj\Release\Package\PackageTmp" setAclResourceType="Directory" />
+  <setAcl path="D:\FIT5032---S3\5032_JiancongLei_30310016\FIT5032_studio\FIT5032_Week11\FIT5032_Week11\obj\Release\Package\PackageTmp" setAclUser="anonymousAuthenticationUser" setAclResourceType="Directory" />
+</sitemanifest>
