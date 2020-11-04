@@ -15,6 +15,7 @@ namespace Assignment.Controllers
     {
         private AssignmentModel db = new AssignmentModel();
 
+        //  GET the index page for user profile showing the details of user profile
         [Authorize]
         public ActionResult Index()
         {
@@ -29,7 +30,7 @@ namespace Assignment.Controllers
             return View(userProfile);
         }
 
-        // GET: UserProfile/Edit/5
+        // GET the page for user to Edit profile
         [Authorize]
         public ActionResult EditAndCreate()
         {
@@ -45,9 +46,7 @@ namespace Assignment.Controllers
            return View(userProfile);
         }
 
-        // POST: UserProfile/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        // Post the user profile
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize]

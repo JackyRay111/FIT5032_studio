@@ -18,7 +18,9 @@ namespace Assignment.Controllers
     public class RatingController : Controller
     {
         private AssignmentModel db = new AssignmentModel();
-        // GET: Rating
+
+        // GET the all rating and comment base on the place id
+        [Authorize]
         public ActionResult Display (int? id)
         {
             var rating = db.RatingLogs.Where(a => a.ActivityPlaceId == id).ToList();
@@ -30,7 +32,8 @@ namespace Assignment.Controllers
             return View(rating);
         }
 
-        // POST: Rating/Create
+        //POST  add the rating, comments base on the placeID, Rating, Comments
+        [Authorize]
         [HttpPost]
         [ValidateInput(false)]
         public ActionResult RatingAndComment(int PlaceId, int Rating, string Comments)

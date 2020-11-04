@@ -23,6 +23,7 @@ namespace Assignment.Controllers
             return View(record.ToList());
         }
 
+        // POST: Delete the booking, input the id of joinlog
         [Authorize]
         public ActionResult Delete(int? id)
         {
@@ -40,7 +41,7 @@ namespace Assignment.Controllers
         }
 
         [Authorize]
-        // POST: Locations/Delete/5
+        // GET The confirmation page of the delete
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

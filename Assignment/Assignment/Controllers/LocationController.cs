@@ -10,6 +10,8 @@ namespace Assignment.Controllers
     public class LocationController : Controller
     {
         private AssignmentModel db = new AssignmentModel();
+
+        // Get the place list 
         [Authorize]
         public ActionResult Place()
         {

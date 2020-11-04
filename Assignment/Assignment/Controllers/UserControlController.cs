@@ -14,17 +14,16 @@ namespace Assignment.Controllers
     {
         private AssignmentModel db = new AssignmentModel();
 
-        // GET: UserControl
-
-        [Authorize]
+        // GET the index of the usercontrol
+        [Authorize(Roles = "Administrator")]
         public ActionResult Index()
         {
             var aspNetUsers = db.AspNetUsers.Include(a => a.UserProfile);
             return View(aspNetUsers.ToList());
         }
 
-        [Authorize]
-        // GET: UserControl/Delete/5
+        // GET the confirmation page for delete
+        [Authorize(Roles = "Administrator")]        
         public ActionResult Delete(string id)
         {
             if (id == null)
@@ -39,8 +38,8 @@ namespace Assignment.Controllers
             return View(aspNetUser);
         }
 
-        [Authorize]
-        // POST: UserControl/Delete/5
+        [Authorize(Roles = "Administrator")]
+        // POST: usercontrol delete
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)

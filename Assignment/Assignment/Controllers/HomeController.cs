@@ -14,26 +14,35 @@ namespace Assignment.Controllers
     public class HomeController : Controller
     {
         private AssignmentModel db = new AssignmentModel();
+
+        // Get the homepage
         public ActionResult Index()
         {
             return View();
         }
 
+        // Get the about page
         public ActionResult About()
         {
             return View();
         }
+
+        // Get the contact page
         public ActionResult Contact()
         {
 
             return View();
         }
+
+        // Get the send_Email page
+        [Authorize(Roles = "Administrator")]
         public ActionResult Send_Email()
         {
             return View(new SendEmailViewModel());
         }
 
-        [Authorize]
+        // Post sent the bulk email to all user
+        [Authorize(Roles = "Administrator")]
         [HttpPost]
         public ActionResult Send_Email(SendEmailViewModel model, HttpPostedFileBase postedFile)
         {

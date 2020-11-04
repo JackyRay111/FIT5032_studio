@@ -16,6 +16,7 @@ namespace Assignment.Controllers
     {
         private AssignmentModel db = new AssignmentModel();
 
+        // Get the whole activity list
         [Authorize]
         public ActionResult Index()
         {
@@ -23,7 +24,7 @@ namespace Assignment.Controllers
             return View(activities.ToList());
         }
 
-        // GET: Activities
+        // Get the course list
         [Authorize]
         public ActionResult Course()
         {
@@ -31,6 +32,7 @@ namespace Assignment.Controllers
             return View(activities.Where(a => a.ActivityTypeId == 1).ToList());
         }
 
+        // Get the QE list
         [Authorize]
         public ActionResult QulitifyE()
         {
@@ -38,12 +40,15 @@ namespace Assignment.Controllers
             return View(activities.Where(a => a.ActivityTypeId == 2).ToList());
         }
 
+        // Get the Event list 
         [Authorize]
         public ActionResult Event()
         {
             var activities = db.Activities.Include(a => a.ActivityCategory).Include(a => a.ActivityPlace).Include(a => a.ActivityType);
             return View(activities.Where(a => a.ActivityTypeId == 3).ToList());
         }
+
+        // The user click book button, a email will activity details will be sent to the user
         [Authorize]
         public ActionResult Book(int? id)
         {
