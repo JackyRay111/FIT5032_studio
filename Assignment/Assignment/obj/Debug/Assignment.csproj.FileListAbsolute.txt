@@ -51,6 +51,8 @@ D:\FIT5032---S3\5032_JiancongLei_30310016\FIT5032_studio\Assignment\Assignment\b
 D:\FIT5032---S3\5032_JiancongLei_30310016\FIT5032_studio\Assignment\Assignment\bin\roslyn\VBCSCompiler.exe
 D:\FIT5032---S3\5032_JiancongLei_30310016\FIT5032_studio\Assignment\Assignment\bin\roslyn\VBCSCompiler.exe.config
 D:\FIT5032---S3\5032_JiancongLei_30310016\FIT5032_studio\Assignment\Assignment\bin\Antlr3.Runtime.dll
+D:\FIT5032---S3\5032_JiancongLei_30310016\FIT5032_studio\Assignment\Assignment\bin\BootstrapRating.dll
+D:\FIT5032---S3\5032_JiancongLei_30310016\FIT5032_studio\Assignment\Assignment\bin\CarouselView.FormsPlugin.Abstractions.dll
 D:\FIT5032---S3\5032_JiancongLei_30310016\FIT5032_studio\Assignment\Assignment\bin\EntityFramework.dll
 D:\FIT5032---S3\5032_JiancongLei_30310016\FIT5032_studio\Assignment\Assignment\bin\EntityFramework.SqlServer.dll
 D:\FIT5032---S3\5032_JiancongLei_30310016\FIT5032_studio\Assignment\Assignment\bin\Microsoft.AspNet.Identity.Core.dll
@@ -68,7 +70,10 @@ D:\FIT5032---S3\5032_JiancongLei_30310016\FIT5032_studio\Assignment\Assignment\b
 D:\FIT5032---S3\5032_JiancongLei_30310016\FIT5032_studio\Assignment\Assignment\bin\Microsoft.Owin.Security.Twitter.dll
 D:\FIT5032---S3\5032_JiancongLei_30310016\FIT5032_studio\Assignment\Assignment\bin\Microsoft.Web.Infrastructure.dll
 D:\FIT5032---S3\5032_JiancongLei_30310016\FIT5032_studio\Assignment\Assignment\bin\Newtonsoft.Json.dll
+D:\FIT5032---S3\5032_JiancongLei_30310016\FIT5032_studio\Assignment\Assignment\bin\Notify.dll
 D:\FIT5032---S3\5032_JiancongLei_30310016\FIT5032_studio\Assignment\Assignment\bin\Owin.dll
+D:\FIT5032---S3\5032_JiancongLei_30310016\FIT5032_studio\Assignment\Assignment\bin\SendGrid.dll
+D:\FIT5032---S3\5032_JiancongLei_30310016\FIT5032_studio\Assignment\Assignment\bin\StarkbankEcdsa.dll
 D:\FIT5032---S3\5032_JiancongLei_30310016\FIT5032_studio\Assignment\Assignment\bin\System.Web.Helpers.dll
 D:\FIT5032---S3\5032_JiancongLei_30310016\FIT5032_studio\Assignment\Assignment\bin\System.Web.Mvc.dll
 D:\FIT5032---S3\5032_JiancongLei_30310016\FIT5032_studio\Assignment\Assignment\bin\System.Web.Optimization.dll
@@ -77,6 +82,9 @@ D:\FIT5032---S3\5032_JiancongLei_30310016\FIT5032_studio\Assignment\Assignment\b
 D:\FIT5032---S3\5032_JiancongLei_30310016\FIT5032_studio\Assignment\Assignment\bin\System.Web.WebPages.dll
 D:\FIT5032---S3\5032_JiancongLei_30310016\FIT5032_studio\Assignment\Assignment\bin\System.Web.WebPages.Razor.dll
 D:\FIT5032---S3\5032_JiancongLei_30310016\FIT5032_studio\Assignment\Assignment\bin\WebGrease.dll
+D:\FIT5032---S3\5032_JiancongLei_30310016\FIT5032_studio\Assignment\Assignment\bin\BootstrapRating.xml
+D:\FIT5032---S3\5032_JiancongLei_30310016\FIT5032_studio\Assignment\Assignment\bin\SendGrid.pdb
+D:\FIT5032---S3\5032_JiancongLei_30310016\FIT5032_studio\Assignment\Assignment\bin\SendGrid.xml
 D:\FIT5032---S3\5032_JiancongLei_30310016\FIT5032_studio\Assignment\Assignment\bin\System.Web.Helpers.xml
 D:\FIT5032---S3\5032_JiancongLei_30310016\FIT5032_studio\Assignment\Assignment\bin\System.Web.Mvc.xml
 D:\FIT5032---S3\5032_JiancongLei_30310016\FIT5032_studio\Assignment\Assignment\bin\System.Web.Optimization.xml
@@ -101,16 +109,8 @@ D:\FIT5032---S3\5032_JiancongLei_30310016\FIT5032_studio\Assignment\Assignment\b
 D:\FIT5032---S3\5032_JiancongLei_30310016\FIT5032_studio\Assignment\Assignment\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 D:\FIT5032---S3\5032_JiancongLei_30310016\FIT5032_studio\Assignment\Assignment\bin\Microsoft.Owin.Security.OAuth.xml
 D:\FIT5032---S3\5032_JiancongLei_30310016\FIT5032_studio\Assignment\Assignment\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\FIT5032---S3\5032_JiancongLei_30310016\FIT5032_studio\Assignment\Assignment\obj\Debug\Assignment.csprojAssemblyReference.cache
 D:\FIT5032---S3\5032_JiancongLei_30310016\FIT5032_studio\Assignment\Assignment\obj\Debug\Assignment.csproj.CoreCompileInputs.cache
 D:\FIT5032---S3\5032_JiancongLei_30310016\FIT5032_studio\Assignment\Assignment\obj\Debug\Assignment.csproj.CopyComplete
 D:\FIT5032---S3\5032_JiancongLei_30310016\FIT5032_studio\Assignment\Assignment\obj\Debug\Assignment.dll
 D:\FIT5032---S3\5032_JiancongLei_30310016\FIT5032_studio\Assignment\Assignment\obj\Debug\Assignment.pdb
-D:\FIT5032---S3\5032_JiancongLei_30310016\FIT5032_studio\Assignment\Assignment\bin\Notify.dll
-D:\FIT5032---S3\5032_JiancongLei_30310016\FIT5032_studio\Assignment\Assignment\bin\SendGrid.dll
-D:\FIT5032---S3\5032_JiancongLei_30310016\FIT5032_studio\Assignment\Assignment\bin\StarkbankEcdsa.dll
-D:\FIT5032---S3\5032_JiancongLei_30310016\FIT5032_studio\Assignment\Assignment\bin\SendGrid.pdb
-D:\FIT5032---S3\5032_JiancongLei_30310016\FIT5032_studio\Assignment\Assignment\bin\SendGrid.xml
-D:\FIT5032---S3\5032_JiancongLei_30310016\FIT5032_studio\Assignment\Assignment\bin\CarouselView.FormsPlugin.Abstractions.dll
-D:\FIT5032---S3\5032_JiancongLei_30310016\FIT5032_studio\Assignment\Assignment\bin\BootstrapRating.dll
-D:\FIT5032---S3\5032_JiancongLei_30310016\FIT5032_studio\Assignment\Assignment\bin\BootstrapRating.xml
-D:\FIT5032---S3\5032_JiancongLei_30310016\FIT5032_studio\Assignment\Assignment\obj\Debug\Assignment.csprojAssemblyReference.cache

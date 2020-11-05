@@ -49,7 +49,7 @@ namespace Assignment.Controllers
         }
 
         // The user click book button, a email will activity details will be sent to the user
-        [Authorize]
+        [Authorize(Roles = "User")]
         public ActionResult Book(int? id)
         {
             ViewBag.Message = "";
@@ -82,6 +82,104 @@ namespace Assignment.Controllers
             }
             return View();
         }
+
+        [Authorize(Roles = "Administrator")]
+        public ActionResult Create()
+        {
+            ViewBag.ActivityCategoryId = new SelectList(db.ActivityCategories, "Id", "CategoryName");
+            ViewBag.ActivityPlaceId = new SelectList(db.ActivityPlaces, "Id", "ActivityPlaceName");
+            ViewBag.ActivityTypeId = new SelectList(db.ActivityTypes, "Id", "ActivityTypeName");
+            return View();
+        }
+
+        // POST: ActivitiesTest/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator")]
+        public ActionResult Create([Bind(Include = "Id,ActivityName,ActivityStartDate,ActivityDescription,ActivityTypeId,ActivityPlaceId,ActivityCategoryId")] Activity activity)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Activities.Add(activity);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            ViewBag.ActivityCategoryId = new SelectList(db.ActivityCategories, "Id", "CategoryName", activity.ActivityCategoryId);
+            ViewBag.ActivityPlaceId = new SelectList(db.ActivityPlaces, "Id", "ActivityPlaceName", activity.ActivityPlaceId);
+            ViewBag.ActivityTypeId = new SelectList(db.ActivityTypes, "Id", "ActivityTypeName", activity.ActivityTypeId);
+            return View(activity);
+        }
+
+        // GET: ActivitiesTest/Edit/5
+        [Authorize(Roles = "Administrator")]
+        public ActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Activity activity = db.Activities.Find(id);
+            if (activity == null)
+            {
+                return HttpNotFound();
+            }
+            ViewBag.ActivityCategoryId = new SelectList(db.ActivityCategories, "Id", "CategoryName", activity.ActivityCategoryId);
+            ViewBag.ActivityPlaceId = new SelectList(db.ActivityPlaces, "Id", "ActivityPlaceName", activity.ActivityPlaceId);
+            ViewBag.ActivityTypeId = new SelectList(db.ActivityTypes, "Id", "ActivityTypeName", activity.ActivityTypeId);
+            return View(activity);
+        }
+
+        // POST: ActivitiesTest/Edit/5
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator")]
+        public ActionResult Edit([Bind(Include = "Id,ActivityName,ActivityStartDate,ActivityDescription,ActivityTypeId,ActivityPlaceId,ActivityCategoryId")] Activity activity)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(activity).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            ViewBag.ActivityCategoryId = new SelectList(db.ActivityCategories, "Id", "CategoryName", activity.ActivityCategoryId);
+            ViewBag.ActivityPlaceId = new SelectList(db.ActivityPlaces, "Id", "ActivityPlaceName", activity.ActivityPlaceId);
+            ViewBag.ActivityTypeId = new SelectList(db.ActivityTypes, "Id", "ActivityTypeName", activity.ActivityTypeId);
+            return View(activity);
+        }
+
+        // GET: ActivitiesTest/Delete/5
+        [Authorize(Roles = "Administrator")]
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Activity activity = db.Activities.Find(id);
+            if (activity == null)
+            {
+                return HttpNotFound();
+            }
+            return View(activity);
+        }
+
+        // POST: ActivitiesTest/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator")]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            Activity activity = db.Activities.Find(id);
+            db.Activities.Remove(activity);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)
@@ -90,5 +188,6 @@ namespace Assignment.Controllers
             }
             base.Dispose(disposing);
         }
+
     }
 }

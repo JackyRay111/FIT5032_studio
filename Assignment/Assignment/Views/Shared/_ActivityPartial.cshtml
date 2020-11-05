@@ -1,4 +1,16 @@
 ﻿@model IEnumerable<Assignment.Models.Activity>
+
+@if (User.IsInRole("Administrator"))
+{
+<div style="padding-bottom: 10px">
+    <a href="@Url.Action("Create")" class="btn btn-primary">
+        <span>
+            <strong>Create New</strong>
+        </span>
+    </a>
+</div>
+}
+
 <table id="dtable" class="table">
     <thead>
         <tr>
@@ -47,20 +59,30 @@
                     @Html.DisplayFor(modelItem => item.ActivityDescription)
                 </td>
                 <td>
-                    @if (item.ActivityStartDate > DateTime.Now)
+
+
+                    @if (User.IsInRole("Administrator"))
                     {
-                    <a href="@Url.Action("Book", new { id = item.Id })" class="btn btn-primary">
-                        <span>
-                            <strong>Book</strong>
-                        </span>
-                    </a>
+                        <p>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+
+                            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                        </p>
+                    }else if (item.ActivityStartDate > DateTime.Now )
+                    {
+                        <a href="@Url.Action("Book", new { id = item.Id })" class="btn btn-primary">
+                            <span>
+                                <strong>Book</strong>
+                            </span>
+                        </a>
                     }
-                    else { 
-                    <a href="@Url.Action("Book", new { id = item.Id })" class="btn btn-primary disabled">
-                        <span>
-                            <strong>Book</strong>
-                        </span>
-                    </a>
+                    else
+                    {
+                        <a href="@Url.Action("Book", new { id = item.Id })" class="btn btn-primary disabled">
+                            <span>
+                                <strong>Book</strong>
+                            </span>
+                        </a>
                     }
                 </td>
             </tr>
