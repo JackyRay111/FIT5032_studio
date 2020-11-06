@@ -6,7 +6,7 @@
 }
 
 <h2>MyActivity</h2>
-
+<link href="~/Content/DataTables/css/dataTables.bootstrap.min.css" rel="stylesheet" />
 <div style="padding-bottom: 10px">
     <a href="@Url.Action("Report", "Report")" class="btn btn-primary">
         <span>
@@ -16,41 +16,61 @@
 </div>
 
 
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Activity.ActivityName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AspNetUser.Email)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.JoinDate)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Activity.ActivityName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AspNetUser.Email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.JoinDate)
-        </td>
-        <td>
-            @if (item.Activity.ActivityStartDate > DateTime.Now)
-            {
-            @Html.ActionLink("Cancel", "Delete", new { id = item.Id })
-            }
-            else { 
-            <p>Activity Done</p>
-            }
-        </td>
-    </tr>
-}
-
+<table class="table" id="dtable">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Activity.ActivityName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Activity.ActivityType.ActivityTypeName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Activity.ActivityStartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AspNetUser.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JoinDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Activity.ActivityName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Activity.ActivityType.ActivityTypeName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Activity.ActivityStartDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AspNetUser.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.JoinDate)
+                </td>
+                <td>
+                    @if (item.Activity.ActivityStartDate > DateTime.Now)
+                    {
+                        @Html.ActionLink("Cancel", "Delete", new { id = item.Id })
+                    }
+                    else
+                    {
+                        <p>Activity Done</p>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
 </table>
+
+@section Scripts{
+    @Scripts.Render("~/Scripts/dataTables")
+}

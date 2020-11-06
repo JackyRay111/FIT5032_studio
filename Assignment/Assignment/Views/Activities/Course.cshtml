@@ -17,43 +17,13 @@
 <br />
 <br />
 <br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
 @*
-    1. This page demonstrate search in Datatable with Datepicker  
+    1. This page demonstrate search in Datatable with Datepicker
     2. The java script follow bootstrap datepick and jquery dataTable
 *@
+
 @Html.Partial("_ActivityPartial")
+
 @section Scripts {
-    <script src="~/Scripts/bootstrap-datepicker.min.js"></script>
-    <script src="~/Scripts/DataTables/dataTables.bootstrap.min.js"></script>
-    <script src="~/Scripts/DataTables/jquery.dataTables.min.js"></script>
-    <script>
-        $(function () {
-            var today = new Date()
-
-            var dataTable = $('#dtable').DataTable();
-
-            $('#datepicker').datepicker({
-                defaultViewDate: today,
-                format: "dd/mm/yyyy",
-                startDate: today
-            })
-
-            $('#datepicker').on('keyup click change', function () {
-                var v = $(this).val();
-                dataTable.search(v).draw();
-            });
-            //$('#datepicker').datepicker('show');
-        });
-    </script>
+    @Scripts.Render("~/Scripts/DatepickAndTable")
 }

@@ -41,6 +41,14 @@ namespace Assignment
             bundles.Add(new ScriptBundle("~/bundles/TinyMce").Include(
                        "~/Scripts/Tinymce/tinymce.min.js",
                         "~/Scripts/TinyMce.js"));
+            bundles.Add(new ScriptBundle("~/Scripts/DatepickAndTable").Include(
+                    "~/Scripts/bootstrap-datepicker.min.js",
+                    "~/Scripts/bootstrap-datepicker.js",
+                     "~/Scripts/DataTables/jquery.dataTables.js",
+                     "~/Scripts/DataTables/dataTables.bootstrap.js",
+                     "~/Scripts/DataTables/jquery.dataTables.min.js",
+                     "~/Scripts/DataTables/dataTables.bootstrap.min.js",
+                     "~/Scripts/DatepickAndTable.js"));
         }
     }
 }
